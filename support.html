@@ -1,14 +1,50 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Support - Refreshly</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Support — Refreshly</title>
+    <style>
+      :root { --accent:#0aa3ff; --text:#14181f; --muted:#5a6676; --bg:#ffffff; --card:#f6f8fb; }
+      * { box-sizing: border-box; }
+      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+      .wrap { max-width: 860px; margin: 0 auto; padding: 56px 20px; }
+      a { color: var(--accent); text-decoration:none; }
+      a:hover { text-decoration:underline; }
+      h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: -0.02em; }
+      .meta { color: var(--muted); margin: 0 0 22px; }
+      .card { background: var(--card); border: 1px solid rgba(20,24,31,0.08); border-radius: 14px; padding: 16px; margin: 16px 0; }
+      ul { padding-left: 20px; }
+      code { background: rgba(20,24,31,0.06); padding: 2px 6px; border-radius: 6px; }
+    </style>
   </head>
   <body>
-    <main>
+    <main class="wrap">
+      <p><a href="/">← Back to Refreshly</a></p>
       <h1>Support</h1>
-      <p>This page will contain Refreshly support information.</p>
+      <p class="meta">Need help with Refreshly? We’ve got you.</p>
+
+      <div class="card">
+        <p><strong>Email support:</strong> <a href="mailto:support@refreshly.app">support@refreshly.app</a></p>
+        <p>Please include:</p>
+        <ul>
+          <li>Your device model and iOS version</li>
+          <li>The Refreshly app version</li>
+          <li>What you expected to happen vs what happened</li>
+        </ul>
+      </div>
+
+      <h2>Common questions</h2>
+      <div class="card">
+        <p><strong>How do I change my daily goal?</strong><br/>
+        Open the app and go to Settings → Goal.</p>
+
+        <p><strong>How do reminders work?</strong><br/>
+        Reminders are optional. You can enable/disable them and adjust timing in Settings.</p>
+
+        <p><strong>Do you store my data in the cloud?</strong><br/>
+        By default, Refreshly stores your data on your device.</p>
+      </div>
     </main>
   </body>
 </html>

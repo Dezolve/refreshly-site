@@ -3,73 +3,173 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Refreshly</title>
-    <meta name="description" content="Refreshly helps you build a daily hydration habit with goals, fast logging, and optional reminders." />
-    <style>
-      :root { --accent:#0aa3ff; --text:#14181f; --muted:#5a6676; --bg:#ffffff; --card:#f6f8fb; }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-      }
-      .wrap { max-width: 860px; margin: 0 auto; padding: 56px 20px; }
-      .hero {
-        background: linear-gradient(135deg, rgba(10,163,255,0.12), rgba(0,210,179,0.10));
-        border: 1px solid rgba(20,24,31,0.08);
-        border-radius: 16px;
-        padding: 28px 24px;
-      }
-      h1 { margin: 0 0 6px; font-size: 34px; letter-spacing: -0.02em; }
-      .tagline { margin: 0; color: var(--muted); font-size: 16px; }
-      .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 20px; }
-      .card { background: var(--card); border: 1px solid rgba(20,24,31,0.08); border-radius: 14px; padding: 16px; }
-      .card h2 { font-size: 16px; margin: 0 0 6px; }
-      a { color: var(--accent); text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      .links { margin-top: 18px; display: flex; gap: 16px; flex-wrap: wrap; }
-      .footer { margin-top: 34px; color: var(--muted); font-size: 13px; }
-      .pill { display:inline-block; padding:2px 10px; border-radius:999px; background: rgba(10,163,255,0.12); color: var(--text); font-size: 12px; }
-    </style>
+    <title>Refreshly | Daily Hydration Habit App for iOS</title>
+    <meta
+      name="description"
+      content="Refreshly helps you stay hydrated with quick logging, flexible reminders, and weekly progress insights on iPhone."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/assets/images/branding/icon.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script src="/assets/js/site.js" defer></script>
   </head>
   <body>
-    <main class="wrap">
-      <section class="hero">
-        <span class="pill">Refreshly</span>
-        <h1>Build your daily hydration habit.</h1>
-        <p class="tagline">Simple goals, fast logging, and optional reminders — so you feel refreshed and consistent.</p>
+    <div class="top-shell">
+      <div class="bubble" aria-hidden="true"></div>
 
-        <div class="grid">
-          <div class="card">
-            <h2>Goals</h2>
-            <p>Set a daily target (recommended or custom) and track progress throughout the day.</p>
-          </div>
-          <div class="card">
-            <h2>Fast logging</h2>
-            <p>Log water in one tap with your preferred units (oz, mL, L).</p>
-          </div>
-          <div class="card">
-            <h2>Reminders</h2>
-            <p>Turn on gentle reminders if you want them. You’re always in control.</p>
-          </div>
+      <header class="site-header wrap">
+        <div class="nav-shell">
+          <a class="brand" href="/" aria-label="Refreshly Home">
+            <img src="/assets/images/branding/icon.png" alt="Refreshly app icon" />
+            <span>Refreshly</span>
+          </a>
+          <nav class="main-nav" aria-label="Main navigation">
+            <a href="#features">Features</a>
+            <a href="#screenshots">Screenshots</a>
+            <a href="#download">Get the app</a>
+            <a href="/support.html">Support</a>
+          </nav>
         </div>
+      </header>
 
-        <div class="links">
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/support.html">Support</a>
-          <a href="/terms.html">Terms of Service</a>
-        </div>
-      </section>
+      <main>
+        <section class="wrap hero reveal">
+          <div class="hero-copy">
+            <p class="kicker">Hydration, simplified</p>
+            <h1>Build a hydration routine you can keep.</h1>
+            <p class="lead">
+              Refreshly keeps daily water tracking quick, clear, and motivating. Log in one tap,
+              watch streaks grow, and stay consistent without overthinking it.
+            </p>
 
-      <p class="footer">
-        © <span id="y"></span> Refreshly. All rights reserved.
-      </p>
-    </main>
+            <div class="cta-row">
+              <a class="button primary store" href="#download">Download on the App Store (Soon)</a>
+              <a class="button secondary" href="#screenshots">See screenshots</a>
+            </div>
 
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
+            <div class="metrics" aria-label="Refreshly highlights">
+              <article class="metric">
+                <span class="metric-value">1-tap</span>
+                <span class="metric-label">Fast water logging</span>
+              </article>
+              <article class="metric">
+                <span class="metric-value">7-day</span>
+                <span class="metric-label">Weekly progress stats</span>
+              </article>
+              <article class="metric">
+                <span class="metric-value">Flexible</span>
+                <span class="metric-label">Reminder scheduling</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="phone-card">
+              <img
+                src="/assets/images/screenshots/main-screen-tracker.png"
+                alt="Refreshly main tracker screen showing hydration progress"
+              />
+            </div>
+            <p class="phone-caption">Live progress, streak cues, and quick-add amounts.</p>
+          </div>
+        </section>
+
+        <section class="wrap feature-strip reveal" aria-label="Refreshly feature artwork">
+          <img
+            src="/assets/images/branding/feature-graphic.png"
+            alt="Refreshly banner featuring app branding and goals"
+          />
+        </section>
+
+        <section id="features" class="wrap section reveal">
+          <div class="section-head">
+            <h2>Features built for consistency</h2>
+            <p>Everything in Refreshly is tuned for daily repeat use, not one-time setup complexity.</p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">01</div>
+              <h3>Track intake quickly</h3>
+              <p>Set a default amount, then log with one button whenever you drink water.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">02</div>
+              <h3>See weekly trends</h3>
+              <p>Use simple weekly summaries to spot momentum and close hydration gaps.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">03</div>
+              <h3>Gentle reminders</h3>
+              <p>Enable reminders only when needed and keep full control over schedule and timing.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="screenshots" class="wrap section reveal">
+          <div class="section-head">
+            <h2>Inside the app</h2>
+            <p>Preview key screens for tracking, weekly stats, and settings customization.</p>
+          </div>
+
+          <div class="screenshot-grid">
+            <article class="screen">
+              <img
+                src="/assets/images/screenshots/main-screen-tracker.png"
+                alt="Refreshly tracker screen"
+              />
+              <p>Tracker: immediate goal progress with quick-add shortcuts.</p>
+            </article>
+            <article class="screen">
+              <img src="/assets/images/screenshots/weekly-stats.png" alt="Refreshly weekly stats screen" />
+              <p>Weekly: clean summaries of hits, totals, and averages.</p>
+            </article>
+            <article class="screen">
+              <img src="/assets/images/screenshots/settings.png" alt="Refreshly settings screen" />
+              <p>Settings: units, goals, reminders, and logging defaults.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="download" class="wrap section reveal">
+          <div class="download-shell">
+            <div>
+              <h2>Get Refreshly on iOS</h2>
+              <p>
+                App Store listing and QR launch are being finalized. Use this section as the permanent
+                install CTA area on the site.
+              </p>
+              <ul class="detail-list">
+                <li>Placeholder App Store button ready for your final link.</li>
+                <li>QR block ready to replace with your published install QR code.</li>
+                <li>Designed for both desktop and mobile conversions.</li>
+              </ul>
+              <div class="cta-row">
+                <a class="button primary store" href="#" aria-disabled="true">iOS App Store Link Coming Soon</a>
+              </div>
+            </div>
+
+            <aside class="qr-box" aria-label="iOS QR placeholder">
+              <div class="qr-mock" aria-hidden="true"></div>
+              <p class="qr-label">iOS QR Placeholder</p>
+            </aside>
+          </div>
+        </section>
+
+        <footer class="wrap footer">
+          <p class="copy">© <span class="js-year"></span> Refreshly. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+            <a href="/support.html">Support</a>
+          </div>
+        </footer>
+      </main>
+    </div>
   </body>
 </html>

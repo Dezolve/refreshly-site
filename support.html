@@ -3,48 +3,72 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Support — Refreshly</title>
-    <style>
-      :root { --accent:#0aa3ff; --text:#14181f; --muted:#5a6676; --bg:#ffffff; --card:#f6f8fb; }
-      * { box-sizing: border-box; }
-      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
-      .wrap { max-width: 860px; margin: 0 auto; padding: 56px 20px; }
-      a { color: var(--accent); text-decoration:none; }
-      a:hover { text-decoration:underline; }
-      h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: -0.02em; }
-      .meta { color: var(--muted); margin: 0 0 22px; }
-      .card { background: var(--card); border: 1px solid rgba(20,24,31,0.08); border-radius: 14px; padding: 16px; margin: 16px 0; }
-      ul { padding-left: 20px; }
-      code { background: rgba(20,24,31,0.06); padding: 2px 6px; border-radius: 6px; }
-    </style>
+    <title>Support | Refreshly</title>
+    <meta
+      name="description"
+      content="Get support for Refreshly, including troubleshooting and common hydration app questions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/assets/images/branding/icon.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script src="/assets/js/site.js" defer></script>
   </head>
-  <body>
+  <body class="page-legal">
+    <header class="site-header wrap">
+      <div class="nav-shell">
+        <a class="brand" href="/" aria-label="Refreshly Home">
+          <img src="/assets/images/branding/icon.png" alt="Refreshly app icon" />
+          <span>Refreshly</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/index.html#features">Features</a>
+          <a href="/index.html#screenshots">Screenshots</a>
+          <a href="/index.html#download">Get the app</a>
+          <a href="/support.html">Support</a>
+        </nav>
+      </div>
+    </header>
+
     <main class="wrap">
-      <p><a href="/">← Back to Refreshly</a></p>
-      <h1>Support</h1>
-      <p class="meta">Need help with Refreshly? We’ve got you.</p>
+      <article class="legal-shell reveal">
+        <a class="back-link" href="/">← Back to home</a>
+        <h1>Support</h1>
+        <p class="meta">Need help with Refreshly? Reach us directly.</p>
 
-      <div class="card">
-        <p><strong>Email support:</strong> <a href="mailto:support@refreshly.app">support@refreshly.app</a></p>
-        <p>Please include:</p>
+        <div class="callout">
+          <p>
+            Email <a href="mailto:support@refreshly.app">support@refreshly.app</a> and include device
+            model, iOS version, app version, and what happened.
+          </p>
+        </div>
+
+        <h2>Recommended troubleshooting details</h2>
         <ul>
-          <li>Your device model and iOS version</li>
-          <li>The Refreshly app version</li>
-          <li>What you expected to happen vs what happened</li>
+          <li>Device model and current iOS version.</li>
+          <li>Refreshly app version from App Store settings.</li>
+          <li>Expected behavior versus actual behavior.</li>
+          <li>Whether reminders are enabled and what schedule is configured.</li>
         </ul>
-      </div>
 
-      <h2>Common questions</h2>
-      <div class="card">
-        <p><strong>How do I change my daily goal?</strong><br/>
-        Open the app and go to Settings → Goal.</p>
+        <h2>Common questions</h2>
+        <p><strong>How do I change my daily goal?</strong><br />Open Settings, then adjust Goal mode and values.</p>
+        <p><strong>How can I modify reminders?</strong><br />Go to Settings and update reminder toggles and times.</p>
+        <p><strong>Is my hydration data cloud synced?</strong><br />By default, data is stored locally on your device.</p>
+      </article>
 
-        <p><strong>How do reminders work?</strong><br/>
-        Reminders are optional. You can enable/disable them and adjust timing in Settings.</p>
-
-        <p><strong>Do you store my data in the cloud?</strong><br/>
-        By default, Refreshly stores your data on your device.</p>
-      </div>
+      <footer class="footer">
+        <p class="copy">© <span class="js-year"></span> Refreshly. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+          <a href="/support.html">Support</a>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

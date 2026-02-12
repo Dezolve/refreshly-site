@@ -3,55 +3,89 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Terms of Service — Refreshly</title>
-    <style>
-      :root { --accent:#0aa3ff; --text:#14181f; --muted:#5a6676; --bg:#ffffff; --card:#f6f8fb; }
-      * { box-sizing: border-box; }
-      body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
-      .wrap { max-width: 860px; margin: 0 auto; padding: 56px 20px; }
-      a { color: var(--accent); text-decoration:none; }
-      a:hover { text-decoration:underline; }
-      h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: -0.02em; }
-      h2 { margin-top: 28px; font-size: 18px; }
-      .meta { color: var(--muted); margin: 0 0 22px; }
-      .card { background: var(--card); border: 1px solid rgba(20,24,31,0.08); border-radius: 14px; padding: 16px; margin: 16px 0; }
-      ul { padding-left: 20px; }
-    </style>
+    <title>Terms of Service | Refreshly</title>
+    <meta
+      name="description"
+      content="Terms of Service for Refreshly, the hydration habit app."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/assets/images/branding/icon.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script src="/assets/js/site.js" defer></script>
   </head>
-  <body>
-    <main class="wrap">
-      <p><a href="/">← Back to Refreshly</a></p>
-      <h1>Terms of Service</h1>
-      <p class="meta">Effective date: <strong>2026-02-10</strong></p>
-
-      <div class="card">
-        <p><strong>Refreshly is a habit and reminder tool.</strong> It is not medical advice. Use your best judgment and consult a professional if you have health concerns.</p>
+  <body class="page-legal">
+    <header class="site-header wrap">
+      <div class="nav-shell">
+        <a class="brand" href="/" aria-label="Refreshly Home">
+          <img src="/assets/images/branding/icon.png" alt="Refreshly app icon" />
+          <span>Refreshly</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/index.html#features">Features</a>
+          <a href="/index.html#screenshots">Screenshots</a>
+          <a href="/index.html#download">Get the app</a>
+          <a href="/support.html">Support</a>
+        </nav>
       </div>
+    </header>
 
-      <h2>Using the app</h2>
-      <p>
-        By downloading or using Refreshly, you agree to use the app responsibly and in accordance with these terms.
-      </p>
+    <main class="wrap">
+      <article class="legal-shell reveal">
+        <a class="back-link" href="/">← Back to home</a>
+        <h1>Terms of Service</h1>
+        <p class="meta">Effective date: <strong>February 10, 2026</strong></p>
 
-      <h2>No warranties</h2>
-      <p>
-        Refreshly is provided “as is” and “as available.” We make no warranties of any kind regarding accuracy, reliability, or availability.
-      </p>
+        <div class="callout">
+          <p>
+            Refreshly is a hydration habit tool, not medical advice. Consult a healthcare professional
+            for medical concerns.
+          </p>
+        </div>
 
-      <h2>Limitation of liability</h2>
-      <p>
-        To the maximum extent permitted by law, Refreshly and its creators are not liable for any damages arising from your use of the app.
-      </p>
+        <h2>Use of the app</h2>
+        <p>
+          By downloading or using Refreshly, you agree to use the app responsibly and in accordance
+          with applicable laws and these terms.
+        </p>
 
-      <h2>Changes</h2>
-      <p>
-        We may update these terms from time to time. We will update the “Effective date” above when changes are made.
-      </p>
+        <h2>No warranties</h2>
+        <p>
+          Refreshly is provided "as is" and "as available" without warranties of any kind, including
+          warranties of accuracy, reliability, or uninterrupted availability.
+        </p>
 
-      <h2>Contact</h2>
-      <p>
-        Questions about these terms? Email: <a href="mailto:support@refreshly.app">support@refreshly.app</a>
-      </p>
+        <h2>Limitation of liability</h2>
+        <p>
+          To the maximum extent permitted by law, Refreshly and its creators are not liable for any
+          indirect, incidental, special, or consequential damages arising from app use.
+        </p>
+
+        <h2>Updates to terms</h2>
+        <p>
+          We may update these terms at any time. Continued use of Refreshly after updates means you
+          accept the revised terms.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about these terms can be sent to
+          <a href="mailto:support@refreshly.app">support@refreshly.app</a>.
+        </p>
+      </article>
+
+      <footer class="footer">
+        <p class="copy">© <span class="js-year"></span> Refreshly. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+          <a href="/support.html">Support</a>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

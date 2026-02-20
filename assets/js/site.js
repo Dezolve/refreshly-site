@@ -92,6 +92,130 @@
     });
   }
 
+  const autoPlayVideos = document.querySelectorAll("video[data-autoplay-inview]");
+  if (autoPlayVideos.length) {
+    const minVisibleRatio = 0.35;
+
+    autoPlayVideos.forEach((video) => {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute("muted", "");
+      video.playsInline = true;
+      video.autoplay = true;
+      video.setAttribute("autoplay", "");
+    });
+
+    const playWhenPossible = (video) => {
+      if (video.ended) {
+        video.currentTime = 0;
+      }
+      const playResult = video.play();
+      if (playResult && typeof playResult.catch === "function") {
+        playResult.catch(() => {});
+      }
+    };
+
+    const pauseIfPlaying = (video) => {
+      if (!video.paused) {
+        video.pause();
+      }
+    };
+
+    const visibleEnough = (element, minVisibleRatio) => {
+      const rect = element.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) {
+        return false;
+      }
+
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const visibleTop = Math.max(rect.top, 0);
+      const visibleBottom = Math.min(rect.bottom, viewportHeight);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      return visibleHeight / rect.height >= minVisibleRatio;
+    };
+
+    const syncVideoPlayback = (video) => {
+      if (visibleEnough(video, minVisibleRatio)) {
+        playWhenPossible(video);
+        return;
+      }
+
+      pauseIfPlaying(video);
+    };
+
+    const syncAllVideoPlayback = () => {
+      autoPlayVideos.forEach((video) => syncVideoPlayback(video));
+    };
+
+    if ("IntersectionObserver" in window) {
+      const videoObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!(entry.target instanceof HTMLVideoElement)) {
+              return;
+            }
+
+            const video = entry.target;
+            if (entry.isIntersecting && entry.intersectionRatio >= minVisibleRatio) {
+              playWhenPossible(video);
+              return;
+            }
+
+            pauseIfPlaying(video);
+          });
+        },
+        {
+          threshold: [0, 0.2, 0.35, 0.6, 0.85],
+        }
+      );
+
+      autoPlayVideos.forEach((video) => videoObserver.observe(video));
+    } else {
+      let framePending = false;
+      const onViewportChange = () => {
+        if (framePending) {
+          return;
+        }
+        framePending = true;
+        window.requestAnimationFrame(() => {
+          syncAllVideoPlayback();
+          framePending = false;
+        });
+      };
+
+      window.addEventListener("scroll", onViewportChange, { passive: true });
+      window.addEventListener("resize", onViewportChange);
+      onViewportChange();
+    }
+
+    autoPlayVideos.forEach((video) => {
+      video.addEventListener("loadeddata", () => {
+        syncVideoPlayback(video);
+      });
+
+      video.addEventListener("canplay", () => {
+        syncVideoPlayback(video);
+      });
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        autoPlayVideos.forEach((video) => pauseIfPlaying(video));
+        return;
+      }
+
+      syncAllVideoPlayback();
+    });
+
+    window.addEventListener("pageshow", () => {
+      syncAllVideoPlayback();
+    });
+
+    window.requestAnimationFrame(() => {
+      syncAllVideoPlayback();
+    });
+  }
+
   const revealNodes = document.querySelectorAll(".reveal");
   const showNode = (node) => {
     node.classList.add("is-visible");

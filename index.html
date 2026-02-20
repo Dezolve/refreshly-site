@@ -16,6 +16,19 @@
     />
     <link rel="icon" type="image/png" href="/assets/images/branding/icon.png" />
     <link rel="stylesheet" href="/assets/css/site.css" />
+    <style>
+      .promo-video {
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      .promo-video video {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
     <script src="/assets/js/site.js" defer></script>
   </head>
   <body>
@@ -231,7 +244,7 @@
             </div>
 
             <aside class="promo-video" aria-label="Refreshly iOS availability video">
-              <video controls playsinline preload="metadata">
+              <video controls playsinline muted autoplay preload="metadata" data-autoplay-inview>
                 <source
                   src="/assets/marketing/Refreshly%20Water%20Tracker%20(New%20iOS%20App).mp4"
                   type="video/mp4"

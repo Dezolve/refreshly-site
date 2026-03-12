@@ -23,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -40,7 +41,7 @@ body {
     radial-gradient(circle at 88% 20%, rgba(76, 178, 255, 0.42), transparent 26%),
     linear-gradient(175deg, var(--bg) 0%, #f6feff 40%, #e3f7ff 100%);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {
@@ -60,6 +61,7 @@ a {
 .top-shell {
   position: relative;
   isolation: isolate;
+  overflow-x: clip;
 }
 
 .bubble,
@@ -752,21 +754,21 @@ h1 {
     width: 88px;
     height: 88px;
     top: 110px;
-    right: -10px;
+    right: 0;
   }
 
   .bubble::before {
     width: 34px;
     height: 34px;
-    top: 110px;
-    left: -14px;
+    top: 104px;
+    left: 4px;
   }
 
   .bubble::after {
     width: 20px;
     height: 20px;
     top: 18px;
-    left: -44px;
+    left: -16px;
   }
 
   .nav-shell {

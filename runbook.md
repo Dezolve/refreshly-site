@@ -80,6 +80,41 @@ Or for a specific port:
 .\scripts\Test-LocalServer.ps1 -Port 4173
 ```
 
+## Standard deploy step for CSS or JS changes
+
+Before pushing any CSS or JS update, bump the shared asset version:
+
+```powershell
+.\scripts\Update-AssetVersion.ps1
+```
+
+If PowerShell blocks local scripts:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\Update-AssetVersion.ps1
+```
+
+What it does:
+
+- Updates the `?v=...` cache-busting token for `site.css` and `site.js`
+- Applies the same version to `index.html`, `privacy.html`, `support.html`, and `terms.html`
+- Uses a timestamp by default so every deploy gets a fresh asset URL
+
+Optional explicit version:
+
+```powershell
+.\scripts\Update-AssetVersion.ps1 -Version 20260312-090000
+```
+
+Recommended release flow:
+
+```powershell
+.\scripts\Update-AssetVersion.ps1
+git add assets/css/site.css assets/js/site.js index.html privacy.html support.html terms.html
+git commit -m "Publish mobile layout updates"
+git push
+```
+
 ## Desktop testing
 
 Open:

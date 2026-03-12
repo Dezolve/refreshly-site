@@ -2,6 +2,10 @@
   const yearNodes = document.querySelectorAll(".js-year");
   const year = new Date().getFullYear();
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const shouldSimplifyReveal =
+    prefersReducedMotion ||
+    window.matchMedia("(max-width: 840px)").matches ||
+    window.matchMedia("(pointer: coarse)").matches;
 
   yearNodes.forEach((node) => {
     node.textContent = String(year);
@@ -227,7 +231,7 @@
     return;
   }
 
-  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  if (shouldSimplifyReveal || !("IntersectionObserver" in window)) {
     revealNodes.forEach(showNode);
     return;
   }

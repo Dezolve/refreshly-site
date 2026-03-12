@@ -28,6 +28,11 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+  padding:
+    env(safe-area-inset-top, 0px)
+    env(safe-area-inset-right, 0px)
+    env(safe-area-inset-bottom, 0px)
+    env(safe-area-inset-left, 0px);
   color: var(--ink);
   font-family: "Sora", "Avenir Next", "Segoe UI", sans-serif;
   background:
@@ -35,6 +40,7 @@ body {
     radial-gradient(circle at 88% 20%, rgba(76, 178, 255, 0.42), transparent 26%),
     linear-gradient(175deg, var(--bg) 0%, #f6feff 40%, #e3f7ff 100%);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -629,33 +635,80 @@ h1 {
 @media (max-width: 1040px) {
   .hero {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
   .download-shell {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
 @media (max-width: 840px) {
   .site-header {
     position: static;
+    padding-top: 0.75rem;
   }
 
   .nav-shell {
+    padding: 0.85rem 0.9rem;
     border-radius: 20px;
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.9rem;
   }
 
   .main-nav {
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-content: flex-start;
+    gap: 0.45rem;
+  }
+
+  .main-nav a {
+    padding: 0.5rem 0.45rem;
+    text-align: center;
   }
 
   .metrics,
   .feature-grid,
   .screenshot-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    gap: 1rem;
+  }
+
+  main {
+    padding: 1.75rem 0 3rem;
+  }
+
+  .hero-copy,
+  .hero-visual,
+  .feature-strip,
+  .download-shell,
+  .page-legal .legal-shell {
+    border-radius: 22px;
+  }
+
+  .feature-strip {
+    margin-top: 1.15rem;
+  }
+
+  .section {
+    margin-top: 2.4rem;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.9rem;
+  }
+
+  .section-head p {
+    max-width: none;
   }
 
   .download-copy .promo-qr {
@@ -678,6 +731,142 @@ h1 {
 
   .brand span {
     font-size: 1.8rem;
+  }
+
+  .footer {
+    margin-top: 2.4rem;
+    padding-top: 1rem;
+  }
+
+  .page-legal main {
+    padding-top: 1.2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .wrap {
+    width: min(var(--max), calc(100% - 1.1rem));
+  }
+
+  .bubble {
+    width: 88px;
+    height: 88px;
+    top: 110px;
+    right: -10px;
+  }
+
+  .bubble::before {
+    width: 34px;
+    height: 34px;
+    top: 110px;
+    left: -14px;
+  }
+
+  .bubble::after {
+    width: 20px;
+    height: 20px;
+    top: 18px;
+    left: -44px;
+  }
+
+  .nav-shell {
+    padding: 0.8rem;
+  }
+
+  .brand {
+    gap: 0.55rem;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand span {
+    font-size: 1.55rem;
+  }
+
+  .main-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .main-nav a {
+    font-size: 0.84rem;
+  }
+
+  main {
+    padding: 1.25rem 0 2.5rem;
+  }
+
+  .hero-copy,
+  .hero-visual,
+  .download-shell {
+    padding: 1rem;
+  }
+
+  .cta-row {
+    margin-top: 1.1rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .button.store {
+    min-width: 0;
+  }
+
+  .metrics {
+    gap: 0.6rem;
+  }
+
+  .metric {
+    padding: 0.75rem;
+  }
+
+  .phone-card {
+    width: min(100%, 260px);
+    border-width: 7px;
+    border-radius: 30px;
+  }
+
+  .section {
+    margin-top: 2rem;
+  }
+
+  .promo-video,
+  .promo-qr,
+  .screen {
+    border-radius: 20px;
+  }
+
+  .promo-video,
+  .promo-qr {
+    padding: 0.85rem;
+  }
+
+  .screen p {
+    padding: 0.7rem 0.75rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .page-legal h1 {
+    font-size: clamp(1.8rem, 9vw, 2.25rem);
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: clamp(1.9rem, 10vw, 2.6rem);
+  }
+
+  .lead {
+    max-width: none;
   }
 }
 
